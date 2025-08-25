@@ -1,6 +1,5 @@
 fun main() {
     println("Bem vindo ao Old Dragon! Vamos se aventurar?")
-
     print("Digite o nome do personagem: ")
     val nome = readLine() ?: ""
 
@@ -11,8 +10,7 @@ fun main() {
     personagem.interacaoIdade()
 
     println(
-        """
-        Escolha o estilo da aventura:
+        """Escolha o estilo da aventura:
         1 - Clássico
         2 - Aventureiro
         3 - Heróico
@@ -22,7 +20,7 @@ fun main() {
         "1","classico","clássico" -> 1
         "2","aventureiro" -> 2
         "3","heroico","heróico" -> 3
-        else -> { println("Valor inválido. Usando Clássico."); 1 }
+        else -> { println("Valor inválido. Usaremos o modo Clássico."); 1 }
     }
 
     println("\nEscolha a raça do personagem:")

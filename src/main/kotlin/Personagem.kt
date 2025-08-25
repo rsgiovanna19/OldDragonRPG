@@ -10,6 +10,7 @@ open class Personagem(var nome: String, var idade: Int) {
         }
     }
 
+    //resumo do personagem
     open fun mostrarResumo() {
         println("\n=== Resumo do Personagem ===")
         println("Nome: $nome")

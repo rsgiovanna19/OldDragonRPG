@@ -8,6 +8,7 @@ class Atributos(nome: String, idade: Int) : Personagem(nome, idade) {
     var sabedoria = 0
     var carisma = 0
 
+    //forma q será rolada os dados
     companion object {
         private fun rolarD6() = Random.nextInt(1,7)
         private fun rolar3d6() = rolarD6() + rolarD6() + rolarD6()
@@ -27,6 +28,7 @@ class Atributos(nome: String, idade: Int) : Personagem(nome, idade) {
         }
     }
 
+//dependendo do estilo escolhido, a rolagem de dados será diferente
     fun rolarAtributosPorSorte(estilo: Int) {
         val rolagem = when(estilo){
             1,2 -> ::rolar3d6
@@ -34,7 +36,7 @@ class Atributos(nome: String, idade: Int) : Personagem(nome, idade) {
             else -> ::rolar3d6
         }
 
-        println("\nModo de Atributos: digite 'sorte' para rolar cada atributo.")
+        println("\nModo de Atributos: digite 'Sorte' para rolar cada atributo.")
 
         forca        = solicitarRolar("Força", rolagem)
         destreza     = solicitarRolar("Destreza", rolagem)
@@ -46,15 +48,16 @@ class Atributos(nome: String, idade: Int) : Personagem(nome, idade) {
 
     private fun solicitarRolar(nomeAtributo: String, rolar: () -> Int): Int {
         while (true) {
-            print("Digite 'sorte' para rolar $nomeAtributo: ")
+            print("Digite 'Sorte' para rolar $nomeAtributo: ")
             val input = readLine()?.trim()?.lowercase()
             if (input == "sorte") break
-            println("Comando inválido, digite 'sorte'.")
+            println("Comando inválido, digite 'Sorte'.")
         }
         val valor = rolar()
         println("$nomeAtributo: $valor (${descreverAtributo(valor,nomeAtributo)})\n")
         return valor
     }
+
 
     override fun mostrarResumo() {
         super.mostrarResumo()
@@ -68,6 +71,6 @@ class Atributos(nome: String, idade: Int) : Personagem(nome, idade) {
 
         // Saída mística final
         println("\nQue a sorte esteja sempre ao seu favor, bravo ${raca.name}!")
-        println("Que esta aventura, ${if (classe.name.isNotEmpty()) classe.name else ""} ,seja lendária!")
+        println("Que esta aventura, ${if (classe.name.isNotEmpty()) classe.name else ""},seja lendária!")
     }
 }

@@ -25,3 +25,16 @@ como os dados serão rolados, assim definindo
 o valor e distribuição dos atributos
 
 2. persistência de dados
+
+
+Apresentação 28/08
+
+-> Como a POO foi utilizada neste projeto:
+Classes: personagem, raca, classe
+Objetos: val heroi = Personagem("Giovanna", Atributos(15, 12, 14), "Humano")
+Encapsulamento: organizadção de dados dentro das classes
+Polimorfismo: de forma leve, ao escolher a forma de comportamento a partir do estilo
+de aventura
+
+
+Melhorias: herança das raças, mais especificadas, a partir da classe Raca
